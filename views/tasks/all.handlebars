@@ -3,18 +3,28 @@
 {{#each tasks}}
 
 <li>
+    {{#if this.done}}
+    <a href="/" style="text-decoration: line-through">{{this.title}}</a>
+    {{else}}
     <a href="/">{{this.title}}</a>
+    {{/if}}
+
     <div>
-        <a href="/">Completar</a>
 
+        <form action="/tasks/updatestatus" method="POST">
+            <input type="hidden" name="id" value="{{this.id}}">
+            <input type="hidden" name="done" value="{{this.done}}">
+            <button type="submit">Feito</button>
+        </form>
 
-        <a href="/tasks/edit/{{this.id}}">Editar</button></a>
+        <form action="/tasks/edit/{{this.id}}">
+            <input type="hidden" name="id" value="{{this.id}}">
+            <button type="submit">Editar</button>
+        </form>
 
         <form action="/tasks/remove" method="POST">
-        <input type="hidden" name="id" value="{{this.id}}">
-        <button type="submit">Deletar</button>
-
-
+            <input type="hidden" name="id" value="{{this.id}}">
+            <button type="submit">Deletar</button>
         </form>
 
     </div>
