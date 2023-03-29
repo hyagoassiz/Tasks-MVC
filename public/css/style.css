@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav {
+    width: 100%;
+    background-color: brown;
+    height: 60px;
+    align-items: center;
+}
+
+nav li {
+
+    display: inline-block;
+    margin-top: 12px;
+    float: right;
+    
+}
+
+li{
+    list-style: none;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+}
+
+section {
+    padding-top: 20px;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    background-color: rgb(223, 218, 218);
+    width: 50%;
+    height: auto;
+
+} 
+
+.tarefas {
+    margin: auto;
+
+
+}
+
+.tarefas > div {
+    display: inline-block;
+}
+
+.tarefas a{
+    font-size: 24px;
+    text-decoration: none;
+}
+
+
+.botoes{
+    padding: 5px;
+
+}
+
+.botoes button {
+    padding: 8px;
+}
+
+.botoes > form {
+    padding: 8px;
+    display: inline-block;
+
+}
+
+form {
+    display: inline;
+    
+}

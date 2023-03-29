@@ -1,33 +1,44 @@
-<h1>Todas as Tasks</h1>
+<section>
 
-{{#each tasks}}
+    <h1>Todas as Tarefas</h1>
 
-<li>
-    {{#if this.done}}
-    <a href="/" style="text-decoration: line-through">{{this.title}}</a>
-    {{else}}
-    <a href="/">{{this.title}}</a>
-    {{/if}}
+    <br>
 
-    <div>
+    <hr>
 
-        <form action="/tasks/updatestatus" method="POST">
-            <input type="hidden" name="id" value="{{this.id}}">
-            <input type="hidden" name="done" value="{{this.done}}">
-            <button type="submit">Feito</button>
-        </form>
+    {{#each tasks}}
 
-        <form action="/tasks/edit/{{this.id}}">
-            <input type="hidden" name="id" value="{{this.id}}">
-            <button type="submit">Editar</button>
-        </form>
+    <li class="tarefas">
+        <div>
+            {{#if this.done}}
+            <a href="/" style="text-decoration: line-through">{{this.title}}</a>
+            {{else}}
+            <a href="/">{{this.title}}</a>
+            {{/if}}
+        </div>
 
-        <form action="/tasks/remove" method="POST">
-            <input type="hidden" name="id" value="{{this.id}}">
-            <button type="submit">Deletar</button>
-        </form>
+        <div class="botoes">
 
-    </div>
-</li>
+            <form action="/tasks/updatestatus" method="POST">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <input type="hidden" name="done" value="{{this.done}}">
+                <button type="submit">Feito</button>
+            </form>
 
-{{/each}}
+            <form action="/tasks/edit/{{this.id}}">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <button type="submit">Editar</button>
+            </form>
+
+            <form action="/tasks/remove" method="POST">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <button type="submit">Deletar</button>
+            </form>
+
+        </div>
+    </li>
+
+    {{/each}}
+
+
+</section>

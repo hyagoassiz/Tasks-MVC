@@ -1,4 +1,9 @@
-<h1>Editar Task: {{task.title}}</h1>
+<section>
+    <h1>Editar Tarefa: {{task.title}}</h1>
+
+        <br>
+
+    <hr>
 
 <form action="/tasks/edit" method="POST">
     <input type="hidden" name="id" value="{{task.id}}">
@@ -14,3 +19,6 @@
 
 
 </form>
+
+
+</section>
